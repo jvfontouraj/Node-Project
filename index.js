@@ -70,6 +70,7 @@ const server = http.createServer((req, res) => {
 
   //Overview page
   if (pathname === '/' || pathname === '/overview') {
+    // it means that everything is ok to go
     res.writeHead(200, { 'Content-type': 'text/html' });
 
     const cardsHtml = dataObj
