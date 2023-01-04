@@ -58,9 +58,12 @@ const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
 //the "JSON.parse()" method interprets the data and change it from a string to a js object
 const dataObj = JSON.parse(data);
 
-//
+//map the "productName" from "dataObj" (array from json file), passing throw every element (el)
+//the result is transformed with slugify to a string usable in urls and the values are stored in a new array
 const slugs = dataObj.map((el) => slugify(el.productName, { lower: true }));
+console.log(slugs);
 
+//create a local server using http module
 const server = http.createServer((req, res) => {
   const { query, pathname } = url.parse(req.url, true);
 
