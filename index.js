@@ -65,6 +65,7 @@ console.log(slugs);
 
 //create a local server using http module
 const server = http.createServer((req, res) => {
+  //get the information from the requested url (req.url) with "url.parse" and get the "query" and the "pathname" from it
   const { query, pathname } = url.parse(req.url, true);
 
   //Overview page
